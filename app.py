@@ -38,10 +38,10 @@ def main():
         vector_store = Chroma.from_documents(docs, embeddings)
 
         template = """
-        You are a very helpful assistant, expert in helping analyst programmers understand client requirements. The requirements are documents that are delivered by the business analysis area, which prepares the document with requirement information and a technical solution, that is, the logic that the program will execute, the database tables involved, and programs involved in the solution's development. You must answer the questions in ENGLISH.
+        You are a very helpful assistant. You must answer the questions in ENGLISH.
         Instructions:
         - All information in your answers must be retrieved from the PDF document or based on previous chat history.
-        - In case the question cannot be answered using the information provided in the PDF (It is not relevant to the requirement), honestly state that you cannot answer that question.
+        - In case the question cannot be answered using the information provided in the PDF, honestly state that you cannot answer that question.
         - Be detailed in your answers but stay focused on the question. Add all details that are useful to provide a complete answer, but do not add details beyond the scope of the question.
         PDF Context: {context}
         Question: {question}
